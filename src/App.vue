@@ -1,17 +1,24 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <ImageCanvas :src="imgSrc" />
+    <UploadForm v-model="imgSrc" />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import ImageCanvas from './components/ImageCanvas'
+import UploadForm from './components/UploadForm.vue'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    ImageCanvas,
+    UploadForm
+  },
+  data: function() {
+    return {
+      imgSrc: null
+    }
   }
 }
 </script>
